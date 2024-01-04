@@ -2,9 +2,9 @@ import Note
 
 def create_note(number):
     title = check_len_text_input(
-        input('Введите название заметки: '), number)
+        input('\n\033[35mВведите название заметки: \033[0m'), number)
     body = check_len_text_input(
-        input('Введите описание заметки: '), number)
+        input('\n\033[35mВведите описание заметки: \033[0m'), number)
     return Note.Note(title=title, body=body)
 
 def menu():
@@ -12,8 +12,8 @@ def menu():
 
 def check_len_text_input(text, n):
     while len(text) <= n:
-        print(f'Текст должен быть больше {n} символов\n')
-        text = input('Введите тескт: ')
+        print(f'\n\033[35mТекст должен быть больше {n} символов\033[0m\n')
+        text = input('\n\033[35mВведите тескт: \033[0m')
     else:
         return text
 

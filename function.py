@@ -12,13 +12,13 @@ def add():
             Note.Note.set_id(note)
     array.append(note)
     file_operation.write_file(array, 'a')
-    print('Заметка добавлена...')
+    print('\n\033[35mЗаметка добавлена...\033[0m')
 
 def show(text):
     logic = True
     array = file_operation.read_file()
     if text == 'date':
-        date = input('Введите дату в формате dd.mm.yyyy: ')
+        date = input('\n\033[35mВведите дату в формате dd.mm.yyyy: \033[0m')
     for notes in array:
         if text == 'all':
             logic = False
@@ -31,10 +31,10 @@ def show(text):
             if date in Note.Note.get_date(notes):
                 print(Note.Note.map_note(notes))
     if logic == True:
-        print('Нет ни одной заметки...')
+        print('Нет ни одной заметки...\033[0m')
 
 def id_edit_del_show(text):
-    id = input('Введите id необходимой заметки: ')
+    id = input('Введите id необходимой заметки: \033[0m')
     array = file_operation.read_file()
     logic = True
     for notes in array:
@@ -45,12 +45,12 @@ def id_edit_del_show(text):
                 Note.Note.set_title(notes, note.get_title())
                 Note.Note.set_body(notes, note.get_body())
                 Note.Note.set_date(notes)
-                print('Заметка изменена...')
+                print('\n\033[35mЗаметка изменена...\033[0m')
             if text == 'del':
                 array.remove(notes)
-                print('Заметка удалена...')
+                print('\n\033[35mЗаметка удалена...\033[0m')
             if text == 'show':
                 print(Note.Note.map_note(notes))
     if logic == True:
-        print('Такой заметки нет, возможно, вы ввели неверный id')
+        print('\n\033[35mТакой заметки нет, возможно, вы ввели неверный id\033[0m')
     file_operation.write_file(array, 'a')

@@ -21,6 +21,6 @@ def read_file():
                 id = split_n[0], title = split_n[1], body = split_n[2], date = split_n[3])
             array.append(note)
     except Exception:
-        print('Нет сохраненных заметок...')
+        print('\n\033[35mНет сохраненных заметок...\033[0m')
     finally:
         return array
