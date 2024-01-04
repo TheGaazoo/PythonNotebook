@@ -1,6 +1,5 @@
 import Note
 
-
 def write_file(array, mode):
     file = open("notes.csv", mode='w', encoding='utf-8')
     file.seek(0)
@@ -10,7 +9,6 @@ def write_file(array, mode):
         file.write(Note.Note.to_string(notes))
         file.write('\n')
     file.close
-
 
 def read_file():
     try:

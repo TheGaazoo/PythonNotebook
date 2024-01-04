@@ -4,7 +4,6 @@ import ui
 
 number = 6  # сколько знаков МИНИМУМ может быть в тексте заметки
 
-
 def add():
     note = ui.create_note(number)
     array = file_operation.read_file()
@@ -14,7 +13,6 @@ def add():
     array.append(note)
     file_operation.write_file(array, 'a')
     print('Заметка добавлена...')
-
 
 def show(text):
     logic = True
@@ -34,7 +32,6 @@ def show(text):
                 print(Note.Note.map_note(notes))
     if logic == True:
         print('Нет ни одной заметки...')
-
 
 def id_edit_del_show(text):
     id = input('Введите id необходимой заметки: ')
